@@ -5,6 +5,7 @@ import './App.css';
 import Navigation from './components/Navigation';
 import FormTasks from './components/FormTasks';
 import { todos } from './todos'
+import Example from "./components/Example";
 
 class App extends Component {
     constructor(){
@@ -60,20 +61,24 @@ class App extends Component {
       });
           return (
               <div className="App">
-                  <Navigation titulo="Pagina de inicio"/>
-                  <div className="container">
-                      <div className="col-md-3">
-                          <img src={logo} className="App-logo" alt="logo"/>
-                          <FormTasks onAddTodo={this.agregarTarea}/>
-                      </div>
-                      <fieldset><legend><h2>Tareas</h2></legend></fieldset>
-                      <div className=" col-md-9">
-                          <div className="row">
-                              { todos}
-                          </div>
-                      </div>
-                  </div>
 
+                      <Example/>
+
+                          <div className="container">
+                              <div className="col-md-3">
+                                  <img src={logo} className="App-logo" alt="logo"/>
+                                  <FormTasks onAddTodo={this.agregarTarea}/>
+                              </div>
+                              <fieldset><legend><h2>Tareas</h2></legend></fieldset>
+                              <div className=" col-md-9">
+                                  <div className="row">
+                                      { todos}
+                                  </div>
+                              </div>
+                          </div>
+
+
+                  {/*<Navigation titulo="Pagina de Tareas"/>*/}
               </div>
           );
       }
