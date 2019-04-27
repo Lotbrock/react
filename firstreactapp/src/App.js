@@ -63,7 +63,6 @@ class App extends Component {
               <div className="App">
 
                       <Example/>
-
                           <div className="container">
                               <div className="col-md-3">
                                   <img src={logo} className="App-logo" alt="logo"/>
