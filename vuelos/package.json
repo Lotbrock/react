@@ -6,6 +6,8 @@
     "react": "^16.8.6",
     "react-burger-menu": "^2.6.10",
     "react-calendar": "^2.18.1",
+    "react-date-picker": "^7.5.1",
+    "react-datetime-picker": "^2.4.0",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
     "reactstrap": "^8.0.0"

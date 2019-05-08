@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Calendar from 'react-calendar';
-import {Input, UncontrolledCollapse} from "reactstrap";
+import DatePicker from 'react-date-picker';
 
 class Calendario extends Component {
     state = {
@@ -17,15 +16,12 @@ class Calendario extends Component {
         return (
 
             <div className={"col"}>
-                <Input type={"text"} placeholder={this.state.date} id={this.props.id} className={"col-md-7"}/>
-                <UncontrolledCollapse toggler={this.props.id}>
-                    <div>
-                        <Calendar
-                            onChange={this.onChange}
-                            value={this.state.date}
-                        />
-                    </div>
-                </UncontrolledCollapse>
+                <span className={"text-white col-md-12"}> {this.props.id}</span><br/>
+                <DatePicker
+                    id={this.props.id}
+                    onChange={this.onChange}
+                    value={this.state.date}
+                />
             </div>
 
         );

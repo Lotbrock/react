@@ -16,13 +16,22 @@ function App() {
               <Form>
                   <div className={"row"}>
                   <div className={"col"}>
-                      <Input type={"text"} id={"Origen"} placeholder={"Origen"} className={"col-md-7"}/>
+                      <span className={"text-white"}> Ciudad Origen</span><br/>
+                      <Input type={"text"} id={"Origen"} placeholder={"Origen"}/>
                   </div>
                   <div className={"col"}>
-                      <Input type={"text"} id={"Destino"} placeholder={"Destino"} className={"col-md-7"}/>
+                      <span className={"text-white col-md-12"}> Ciudad Destino</span><br/>
+                      <Input type={"text"} id={"Destino"} placeholder={"Destino"} />
                   </div>
-                      <Calendario id={"ida"}/>
-                      <Calendario id={"vuelta"}/>
+                      <Calendario id={"Ida"}/>
+                      <Calendario id={"Vuelta"}/>
+                      <div className={"col"}>
+                          <span className={"text-white"}> Pasajeros</span><br/>
+                          <Input type={"number"} placeholder={"pasajeros"} />
+                      </div>
+                  </div>
+                  <div className={"center"}>
+                      <Button id={"boton"}>Buscar</Button>
                   </div>
               </Form>
       </div>

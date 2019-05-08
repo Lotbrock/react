@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.react-date-picker{
+  background: #ffffff;
+}
 .container{
   padding-top: 90px;
 }
