@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import Calendario from './components/Calendario'
-import { UncontrolledCollapse, Form, Input, Button } from 'reactstrap'
+import { FormGroup, Form, Input, Button,Label } from 'reactstrap'
 import './App.css';
 import Navegador from "./components/Navegador";
 function App() {
-    var ida="";
   return (
     <div className="App">
         <div>
@@ -17,7 +15,7 @@ function App() {
                   <div className={"row"}>
                   <div className={"col"}>
                       <span className={"text-white"}> Ciudad Origen</span><br/>
-                      <Input type={"text"} id={"Origen"} placeholder={"Origen"}/>
+                      <Input type={"text"} id={"Origen"} placeholder={"Origen"} />
                   </div>
                   <div className={"col"}>
                       <span className={"text-white col-md-12"}> Ciudad Destino</span><br/>
@@ -27,13 +25,22 @@ function App() {
                       <Calendario id={"Vuelta"}/>
                       <div className={"col"}>
                           <span className={"text-white"}> Pasajeros</span><br/>
-                          <Input type={"number"} placeholder={"pasajeros"} />
+                          <FormGroup>
+                              <Input type="select" name="select" id="exampleSelect">
+                                  {<option>1</option>}
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                              </Input>
+                          </FormGroup>
                       </div>
                   </div>
                   <div className={"center"}>
-                      <Button id={"boton"}>Buscar</Button>
+                      <Button id={"boton"} >Buscar</Button>
                   </div>
               </Form>
+            <span>{}</span>
       </div>
     </div>
   );
