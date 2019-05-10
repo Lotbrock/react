@@ -7,8 +7,10 @@ class Calendario extends Component {
         isOpen: false
     };
     onChange= date =>{
+        var id= this.props.id;
+        this.setState(date);
         date>new Date()?
-        this.setState({date})
+        window.sessionStorage.setItem(id ,date)
             : alert("LA FECHA DEBE SER POSTERIOR AL DIA ACTUAL")
     };
 
