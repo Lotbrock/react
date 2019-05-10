@@ -7,7 +7,7 @@ class Calendario extends Component {
         isOpen: false
     };
     onChange= date =>{
-        var id= this.props.id;
+        const id= this.props.id;
         this.setState(date);
         date>new Date()?
         window.sessionStorage.setItem(id ,date)
