@@ -1,4 +1,5 @@
 import { stack as Menu } from 'react-burger-menu'
+import { Link } from 'react-router-dom'
 import React from 'react'
 
 class Navegador extends React.Component {
@@ -8,10 +9,10 @@ class Navegador extends React.Component {
             <Menu className="bm-menu">
                 <div className="bm-item-list">
                     <div className="bm-item">
-                        <a id="home" className="menu-item" href="/">Home</a>
+                        <Link to={"/home"}>Home</Link>
                     </div>
                     <div className="bm-item">
-                        <a id="about" className="menu-item" href="/about">About</a>
+                        <Link to={"/vuelos"}>Vuelos</Link>
                     </div>
                     <div className="bm-item">
                         <a id="contact" className="menu-item" href="/contact">Contact</a>
