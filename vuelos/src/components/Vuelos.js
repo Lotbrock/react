@@ -33,7 +33,6 @@ class Vuelos extends React.Component {
                         </div>
                         {this.state.idaVuelta?<> <Calendario id={"Ida"}/> <Calendario id={"Vuelta"}/></> : <Calendario id={"Ida"}/>}
 
-
                     </div>
                        <div className={"row"}>
                            <div className={"col"}>
