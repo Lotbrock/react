@@ -4,6 +4,7 @@ import './App.css';
 import Navegador from "./components/Navegador";
 import Vuelos from "./components/Vuelos";
 import Home from "./components/Home";
+import LogIn from "./components/LogIn";
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,8 @@ function App() {
                 <Route path={"/vuelos"}
                        component={Vuelos}
                 />
+                <Route path={"/log-in"}
+                       component={LogIn}/>
                 <Route component={Home}
                 />
             </Switch>

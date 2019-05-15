@@ -34,9 +34,10 @@ class Vuelos extends React.Component {
                         {this.state.idaVuelta?<> <Calendario id={"Ida"}/> <Calendario id={"Vuelta"}/></> : <Calendario id={"Ida"}/>}
 
                     </div>
+                    <span className={"text-white"}> Pasajeros</span><br/>
                        <div className={"row"}>
                            <div className={"col"}>
-                               <span className={"text-white"}> Pasajeros</span><br/>
+                               <span className={"text-white"}> Adultos</span><br/>
                                <FormGroup>
                                    <Input type="select" name="select" id="exampleSelect">
                                        <option>1</option>
@@ -46,6 +47,16 @@ class Vuelos extends React.Component {
                                        <option>5</option>
                                    </Input>
                                </FormGroup>
+                           </div>
+                           <div className={"col"}>
+                               <span className={"text-white"}> Niños</span><br/>
+                               <Input type="select" name="select" id="exampleSelect">
+                                   <option>1</option>
+                                   <option>2</option>
+                                   <option>3</option>
+                                   <option>4</option>
+                                   <option>5</option>
+                               </Input>
                            </div>
                        </div>
                     <div className={"center"}>
