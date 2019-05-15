@@ -129,3 +129,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 15px;
   font-weight: bold;
 }
+.asientos {
+  width: 385px;
+  margin: 30px auto;
+  background: #ffffff;
+}

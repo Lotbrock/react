@@ -5,6 +5,7 @@ import Navegador from "./components/Navegador";
 import Vuelos from "./components/Vuelos";
 import Home from "./components/Home";
 import LogIn from "./components/LogIn";
+import Asientos from "./components/Asientos";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,8 @@ function App() {
                 />
                 <Route path={"/log-in"}
                        component={LogIn}/>
+                <Route path={"/asientos"}
+                       component={Asientos}/>
                 <Route component={Home}
                 />
             </Switch>

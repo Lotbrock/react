@@ -17,6 +17,9 @@ class Navegador extends React.Component {
                     <div className="bm-item">
                         <Link className={"colorsitos"} to={"/log-in"}>Log In </Link>
                     </div>
+                    <div className="bm-item">
+                        <Link className={"colorsitos"} to={"/asientos"}>Asientos </Link>
+                    </div>
                 </div>
             </Menu>
         );
