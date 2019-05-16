@@ -6,13 +6,13 @@ import { Redirect } from 'react-dom'
 const validate = values =>{
     const errors ={};
     if (!values.origen){
-        errors.origen = "este campo es obligatorio"
+        errors.origen = "La ciudad de origen es obligatoria"
     }
     if (!values.destino){
-        errors.destino = "este campo es obligatorio"
+        errors.destino = "La ciudad destino es obligatoria"
     }
     if (!values.adultos){
-        errors.adultos = "este campo es obligatorio"
+        errors.adultos = "Debe ir almenos un adulto"
     }
     return errors;
 };
@@ -50,11 +50,13 @@ class Vuelos extends React.Component {
                         <div className={"col"}>
                             <Label className={"text-vuelos"}>Ciudad Origen</Label><br/>
                             <Input name={"origen"} type={"text"} id={"Origen"} placeholder={"Origen"} onChange={this.handleChange}/>
-                            {errors.origen && <p>errors.origen</p>}
+                            {errors.origen && <p> {errors.origen} </p>}
                         </div>
                         <div className={"col"}>
                             <Label className={"text-vuelos"}>Ciudad Destino</Label><br/>
                             <Input name={"destino"} type={"text"} id={"Destino"} placeholder={"Destino"} onChange={this.handleChange} />
+                            {errors.destino && <p> {errors.destino} </p>}
+
                         </div>
                     </div>
                     <div className={"row"}>
@@ -74,12 +76,14 @@ class Vuelos extends React.Component {
                                <Label className={"text-vuelos"}>Adultos</Label><br/>
                                <FormGroup>
                                    <Input name={"adultos"} type="select" id="exampleSelect" onChange={this.handleChange}>
+                                       <option>0</option>
                                        <option>1</option>
                                        <option>2</option>
                                        <option>3</option>
                                        <option>4</option>
                                        <option>5</option>
                                    </Input>
+                                   {errors.adultos && <p> {errors.adultos} </p>}
                                </FormGroup>
                            </div>
                            <div className={"col"}>
