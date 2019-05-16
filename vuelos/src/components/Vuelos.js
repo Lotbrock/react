@@ -1,14 +1,46 @@
 import React from 'react'
 import Calendario from './Calendario'
 import { FormGroup, Form, Input, Button,Label } from 'reactstrap'
+import { Redirect } from 'react-dom'
+
+const validate = values =>{
+    const errors ={};
+    if (!values.origen){
+        errors.origen = "este campo es obligatorio"
+    }
+    if (!values.destino){
+        errors.destino = "este campo es obligatorio"
+    }
+    if (!values.adultos){
+        errors.adultos = "este campo es obligatorio"
+    }
+    return errors;
+};
 class Vuelos extends React.Component {
     state ={
-        idaVuelta: false
+        idaVuelta: false,
+        errors: {}
     };
     handleIdaVuelta=(event)=> {
         this.setState({idaVuelta: !this.state.idaVuelta});
     };
+    handleSubmit = e => {
+        e.preventDefault();
+        const { errors, idaVuelta, ...sinErrors } = this.state;
+        const result = validate(sinErrors);
+
+        this.setState({errors: result});
+        if (!Object.keys(result).length){
+            //Aqui se envia el formulario
+            window.location.href = '/asientos'
+        }
+    };
+    handleChange=({target})=>{
+        const { name, value } = target;
+        this.setState({[name]: value})
+    };
     render () {
+        const { errors } = this.state;
         return (
             <div className={"card"}>
             <div className={"container"}>
@@ -17,11 +49,12 @@ class Vuelos extends React.Component {
                     <div className={"row"}>
                         <div className={"col"}>
                             <Label className={"text-vuelos"}>Ciudad Origen</Label><br/>
-                            <Input type={"text"} id={"Origen"} placeholder={"Origen"} />
+                            <Input name={"origen"} type={"text"} id={"Origen"} placeholder={"Origen"} onChange={this.handleChange}/>
+                            {errors.origen && <p>errors.origen</p>}
                         </div>
                         <div className={"col"}>
                             <Label className={"text-vuelos"}>Ciudad Destino</Label><br/>
-                            <Input type={"text"} id={"Destino"} placeholder={"Destino"} />
+                            <Input name={"destino"} type={"text"} id={"Destino"} placeholder={"Destino"} onChange={this.handleChange} />
                         </div>
                     </div>
                     <div className={"row"}>
@@ -40,7 +73,7 @@ class Vuelos extends React.Component {
                            <div className={"col"}>
                                <Label className={"text-vuelos"}>Adultos</Label><br/>
                                <FormGroup>
-                                   <Input type="select" name="select" id="exampleSelect">
+                                   <Input name={"adultos"} type="select" id="exampleSelect" onChange={this.handleChange}>
                                        <option>1</option>
                                        <option>2</option>
                                        <option>3</option>
@@ -51,7 +84,7 @@ class Vuelos extends React.Component {
                            </div>
                            <div className={"col"}>
                                <Label className={"text-vuelos"}>Niños</Label><br/>
-                               <Input type="select" name="select" id="exampleSelect">
+                               <Input name={"niños"} type="select" id="exampleSelect" >
                                    <option>0</option>
                                    <option>1</option>
                                    <option>2</option>
@@ -61,7 +94,7 @@ class Vuelos extends React.Component {
                            </div>
                        </div>
                     <div className={"center"}>
-                        <Button id={"boton"} >Buscar</Button>
+                        <Button id={"boton"} onClick={this.handleSubmit} >Buscar</Button>
                     </div>
                 </Form>
                 <span>{}</span>
