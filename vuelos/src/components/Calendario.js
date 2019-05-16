@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-date-picker';
+import {Label} from "reactstrap";
 
 class Calendario extends Component {
     state = {
@@ -17,7 +18,7 @@ class Calendario extends Component {
         return (
 
             <div className={"col"}>
-                <span className={"text-white col-md-12"}> {this.props.id}</span><br/>
+                <Label className={"text-vuelos"}>{this.props.id}</Label><br/>
                 <DatePicker
                     id={this.props.id}
                     onChange={this.onChange}
