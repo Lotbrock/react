@@ -8,7 +8,7 @@ class Navegador extends React.Component {
     render () {
         return (
             <Menu className="bm-menu">
-                <NavbarBrand><img src={"https://medidasmaletas.com/wp-content/uploads/2017/03/latam-airlines-logo.jpg"} width={"250"} height={"120"}/> </NavbarBrand>
+                <NavbarBrand><img alt={"logo"} src={"https://medidasmaletas.com/wp-content/uploads/2017/03/latam-airlines-logo.jpg"} width={"250"} height={"120"}/> </NavbarBrand>
                 <div className="bm-item-list ">
                     <div className="bm-item">
                         <Link className={"colorsitos"} to={"/home"}>Home</Link>

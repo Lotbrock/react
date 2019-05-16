@@ -1,7 +1,6 @@
 import React from 'react'
 import Calendario from './Calendario'
-import { FormGroup, Form, Input, Button,Label } from 'reactstrap'
-import { Redirect } from 'react-dom'
+import { FormGroup, Form, Input, Button, Label, Alert } from 'reactstrap'
 
 const validate = values =>{
     const errors ={};
@@ -50,12 +49,12 @@ class Vuelos extends React.Component {
                         <div className={"col"}>
                             <Label className={"text-vuelos"}>Ciudad Origen</Label><br/>
                             <Input name={"origen"} type={"text"} id={"Origen"} placeholder={"Origen"} onChange={this.handleChange}/>
-                            {errors.origen && <p> {errors.origen} </p>}
+                            {errors.origen && <Alert color={"danger"}> {errors.origen} </Alert>}
                         </div>
                         <div className={"col"}>
                             <Label className={"text-vuelos"}>Ciudad Destino</Label><br/>
                             <Input name={"destino"} type={"text"} id={"Destino"} placeholder={"Destino"} onChange={this.handleChange} />
-                            {errors.destino && <p> {errors.destino} </p>}
+                            {errors.destino && <Alert color={"danger"}> {errors.destino} </Alert>}
 
                         </div>
                     </div>
@@ -83,7 +82,7 @@ class Vuelos extends React.Component {
                                        <option>4</option>
                                        <option>5</option>
                                    </Input>
-                                   {errors.adultos && <p> {errors.adultos} </p>}
+                                   {errors.adultos && <Alert color={"danger"}> {errors.adultos} </Alert>}
                                </FormGroup>
                            </div>
                            <div className={"col"}>
